@@ -73,6 +73,11 @@
 				});
 			$this.append($input);
 
+			if ($this.css('position') === 'static') {
+				$this.css('position', 'relative');
+			}
+			$this.css('overflow', 'hidden');
+
 			$this.mousemove(function(e) {
 				var $wrapper = $(this),
 					$input = $wrapper.find('input[type="file"]'),
@@ -81,11 +86,11 @@
 					inputWidth = $input.outerWidth(),
 					inputHeight = $input.outerHeight();
 
-				var left = mouseX - inputWidth + 30;
-				var top = mouseY - inputHeight / 2;
 				var offset = $wrapper.offset(),
 					wrapperWidth = $wrapper.outerWidth(),
-					wrapperHeight = $wrapper.outerHeight();
+					wrapperHeight = $wrapper.outerHeight(),
+					left = mouseX - offset.left - inputWidth + 30,
+					top = mouseY - offset.top - inputHeight / 2;
 
 				if (mouseX > offset.left + wrapperWidth || mouseX < offset.left) {
 					left = -9999;

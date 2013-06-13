@@ -51,10 +51,21 @@
 				max-height: 300px;
 				overflow: auto;
 			}
+
+			#wrapper {
+				position: absolute;
+				left: 500px;
+			}
+			#wrapper input[type="file"] {
+				/* for debugging */
+				opacity: 1 !important;
+			}
 		</style>
 	</head>
 	<body>
-		<div class="btn" id="file-upload">Upload File</div>
+		<div id="wrapper">
+			<div class="btn" id="file-upload">Upload File</div>
+		</div>
 		<br /><br />
 
 		<div class="btn" id="image-preview-input">Upload Image</div>
