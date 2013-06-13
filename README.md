@@ -37,6 +37,9 @@ $('#file-input').imagePreviewInput(options).on('change', function(e, base64Data)
 });
 ```
 
+The `decode` option also accepts a base64 decode function, if you want to supply your own
+because your [browser sucks](http://stackoverflow.com/a/247261).
+
 To get a hold of the file, do this:
 
 ```javascript
@@ -45,8 +48,6 @@ $('#file-input').fileInput().on('change', function(e, files) {
 });
 ```
 
-The `decode` option also accepts a base64 decode function, if you want to supply your own
-because your [browser sucks](http://stackoverflow.com/a/247261).
 
 ## License
 MIT. Whatever.
