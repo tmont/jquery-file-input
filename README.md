@@ -5,6 +5,8 @@ Also supports image uploads with easy previews with very little extra work.
 But if you don't want that, you can rip out about half of the code to make
 it even smaller.
 
+Works in Firefox, Chrome, and maybe IE9, if I get around to testing it.
+
 ## Demo
 [Go here](http://tmont.github.io/jquery-file-input/). View source to... uh... view the source.
 
