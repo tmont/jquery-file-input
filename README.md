@@ -49,7 +49,6 @@ $('#file-input').fileInput().on('change', function(e, files) {
 });
 ```
 
-
 ## License
 MIT. Whatever.
 
