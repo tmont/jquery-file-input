@@ -46,7 +46,7 @@ $('#file-input').fileInput().on('change', function(e, files) {
 ```
 
 The `decode` option also accepts a base64 decode function, if you want to supply your own
-because your [http://stackoverflow.com/a/247261](browser sucks).
+because your [browser sucks](http://stackoverflow.com/a/247261).
 
 ## License
 MIT. Whatever.
