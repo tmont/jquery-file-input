@@ -6,6 +6,7 @@ But if you don't want that, you can rip out about half of the code to make
 it even smaller.
 
 ## Demo
+[Go here](http://tmont.github.io/jquery-file-input/). View source to... uh... view the source.
 
 ## Installation
 Reference [`jquery.file-input.js`](./jquery.file-input.js) somewhere on your page.
