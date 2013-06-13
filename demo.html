@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>File Input Demo</title>
+		<style>
+			body {
+				background-color: ivory;
+				color: #363636;
+				font-family: sans-serif;
+			}
+			.btn {
+				background-image: -moz-linear-gradient(top, #448047, #336524);
+				background-image: -webkit-linear-gradient(top, #448047, #336524);
+				background-image: linear-gradient(to bottom, #448047, #336524);
+				background-color: #448047;
+				border: 1px solid #376e27;
+				padding: 10px 20px;
+				text-align: center;
+				color: white;
+				text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+				cursor: pointer;
+				display: inline-block;
+				border-radius: 4px;
+				font-size: 20px;
+				box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+			}
+			.btn:hover {
+				background-image: -moz-linear-gradient(top, #509754, #3c762a);
+				background-image: -webkit-linear-gradient(top, #509754, #3c762a);
+				background-image: linear-gradient(to bottom, #509754, #3c762a);
+			}
+			.btn:active, .btn:focus {
+				background-image: -moz-linear-gradient(top, #3c762a, #4e9352);
+				background-image: -webkit-linear-gradient(top, #3c762a, #4e9352);
+				background-image: linear-gradient(to bottom, #3c762a, #4e9352);
+			}
+
+			.image-preview {
+				display: none;
+				box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+				margin: 10px;
+				padding: 5px;
+				background-color: white;
+			}
+			.image-preview img {
+				display: table;
+			}
+
+			#image-preview {
+				max-width: 300px;
+				max-height: 300px;
+				overflow: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="btn" id="file-upload">Upload File</div>
+		<br /><br />
+
+		<div class="btn" id="image-preview-input">Upload Image</div>
+		<br />
+		<div class="image-preview" id="image-preview"></div>
+
+		<br /><br />
+
+		<div class="btn" id="image-preview-input-resize-1">Upload Image Resized to under 30KB (quality = 0.5)</div>
+		<br/>
+		<div class="image-preview" id="image-preview-resize-1"></div>
+
+		<br/><br/>
+
+		<div class="btn" id="image-preview-input-resize-2">Upload Image Resized to under 30KB (quality = 0.9)</div>
+		<br/>
+		<div class="image-preview" id="image-preview-resize-2"></div>
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.1/jquery.min.js"></script>
+		<script src="./jquery.file-input.js"></script>
+		<script>
+			$('#file-upload').fileInput();
+			$('#image-preview-input').imagePreviewInput().on('load', function(e, data) {
+				var $preview = $('#image-preview').css('display', 'inline-block'),
+					$img = $preview.find('img');
+				if (!$img.length) {
+					$img = $('<img/>').appendTo($preview);
+				}
+
+				$img.attr('src', data);
+			});
+			$('#image-preview-input-resize-1').imagePreviewInput({ resize: 30 * 1024, decode: true, quality: 0.5 }).on('load', function(e, data) {
+				var $preview = $('#image-preview-resize-1').css('display', 'inline-block'),
+					$img = $preview.find('img');
+				if (!$img.length) {
+					$img = $('<img/>').appendTo($preview);
+				}
+
+				$img.attr('src', data);
+			});
+			$('#image-preview-input-resize-2').imagePreviewInput({ resize: 30 * 1024, decode: true, quality: 0.9 }).on('load', function(e, data) {
+				var $preview = $('#image-preview-resize-2').css('display', 'inline-block'),
+					$img = $preview.find('img');
+				if (!$img.length) {
+					$img = $('<img/>').appendTo($preview);
+				}
+
+				$img.attr('src', data);
+			});
+		</script>
+	</body>
+</html>

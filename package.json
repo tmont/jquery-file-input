@@ -1,0 +1,19 @@
+{
+	"name": "jquery-file-input",
+	"version": "0.0.1",
+	"description": "HTML file inputs restyled with jQuery",
+	"license": "MIT",
+	"author": "Tommy Montgomery <tmont@tmont.com> (http://tmont.com/)",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/tmont/jquery-file-input.git"
+	},
+
+	"devDependencies": {
+		"serve": "1.2.0"
+	},
+
+	"scripts": {
+		"start": "node_modules/.bin/serve -p 9876 ."
+	}
+}
